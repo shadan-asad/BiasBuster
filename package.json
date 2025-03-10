@@ -1,0 +1,22 @@
+{
+  "name": "biasbuster",
+  "version": "1.0.0",
+  "description": "A Chrome extension that analyzes news articles for bias and rewrites them to be more balanced",
+  "main": "src/js/background.js",
+  "scripts": {
+    "build": "mkdir -p dist && cp -r manifest.json src dist/ && cd dist && zip -r biasbuster.zip .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome-extension",
+    "news",
+    "bias",
+    "fact-checking",
+    "ai"
+  ],
+  "author": "BiasBuster Team",
+  "license": "MIT",
+  "devDependencies": {
+    "web-ext": "^7.2.0"
+  }
+} 
