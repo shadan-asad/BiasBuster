@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const highlightBiasCheckbox = document.getElementById('highlight-bias');
   const privacyLink = document.getElementById('privacy-link');
 
+  console.log('Popup loaded');
   // Load settings from storage
   loadSettings();
   
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Functions
   function loadSettings() {
+    console.log('loaddSettings()');
     chrome.storage.sync.get({
       aiModel: 'openai',
       apiKey: '',
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function loadStats() {
+    console.log('loadStats()');
     chrome.storage.sync.get({
       articlesAnalyzed: 0,
       lastBiasScore: 'N/A'
@@ -83,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function toggleSettings() {
+    console.log('toggleSettings()');
     if (settingsPanel.style.display === 'none' || !settingsPanel.style.display) {
       settingsPanel.style.display = 'block';
       settingsBtn.textContent = 'Close Settings';
@@ -93,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function checkIfNewsArticle() {
+    console.log('checkIfNewsArticle()');
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {action: "checkIfNewsArticle"}, function(response) {
         if (response && response.isNewsArticle) {
@@ -109,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function analyzeArticle() {
+    console.log('analyzeArticle()');
     // Update UI to show analysis in progress
     statusIcon.textContent = '🔄';
     statusText.textContent = 'Analyzing article...';

@@ -405,7 +405,7 @@ async function analyzeWithAI(articleContent) {
       console.log('Gemini selected');
       // Make sure we're using the correct API endpoint and model version
       apiEndpoint = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=${settings.apiKey}`;
-      console.log('Gemini API endpoint:', apiEndpoint);
+
       apiKey = settings.apiKey;
       requestBody = {
         contents: [{
@@ -435,13 +435,6 @@ async function analyzeWithAI(articleContent) {
     return getMockAnalysisResult(articleContent);
   }
   
-  console.log('Making API request with:', {
-    action: 'fetchExternalData',
-    url: apiEndpoint,
-    method: 'POST',
-    headers: headers,
-    requestBody: requestBody
-  });
   
   try {
     // Make the API request through the background script to avoid CORS issues
