@@ -15,7 +15,7 @@ BiasBuster is a Chrome extension that analyzes news articles for bias, fact-chec
 
 ### From Chrome Web Store (Recommended)
 
-1. Visit the [BiasBuster Chrome Web Store page](https://chrome.google.com/webstore/detail/biasbuster/your-extension-id)
+1. Visit the [BiasBuster Chrome Web Store page]
 2. Click "Add to Chrome"
 3. Follow the onboarding instructions to set up your AI service
 
